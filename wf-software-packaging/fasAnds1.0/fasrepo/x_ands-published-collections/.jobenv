@@ -1,4 +1,0 @@
-# .ands_env -- shell+perl environment for workflow jobs; place in the workflow dir
-echo "..sourcing $0"
-export JOB_PUBDIR_COLLECTIONS="/srv/fasweb/httpdocs/pub/ands/collections"
-echo "..set JOB_PUBDIR_COLLECTIONS[$JOB_PUBDIR_COLLECTIONS]"
