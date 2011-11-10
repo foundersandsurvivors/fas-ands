@@ -1,6 +1,6 @@
 #!/usr/bin/perl -s
 # TODO document this script for ANDS.
-# Copied from /srv/fasrepo/common-bin
+# Copied from /srv/fasrepo/common-bin by claudine on 2011-11-10.
 
 use utf8;
 $myVersion = '2.1';
