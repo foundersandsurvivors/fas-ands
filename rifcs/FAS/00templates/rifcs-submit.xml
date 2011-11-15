@@ -1,0 +1,7 @@
+<registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
+<registryObject group="University of Melbourne">
+<TOBE_INCLUDED type="instrepo_key" />
+<originatingSource type="authoritative"><TOBE_INCLUDED type="origSource" /></originatingSource>
+<TOBE_INCLUDED type="collection" />
+</registryObject>
+</registryObjects>

@@ -1,0 +1,51 @@
+<rifcs_data id="p-team" project="FAS">
+<party type="group" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">p-team</identifier>
+  <name type="primary">
+    <namePart>Founders and Survivors project team</namePart>
+  </name>
+  <TOBE_INCLUDED type="FAS:common_relatedObjects_party" />
+  <relatedObject local_id="a-project">
+    <key/>
+    <relation type="isParticipantIn" >
+      <description>[[[FAS]]] project</description>
+    </relation>
+  </relatedObject>
+
+  <relatedObject local_id="s-pubwebsite">
+    <key/>
+    <relation type="isManagerOf" >
+      <description>Publicly accessible project website</description>
+    </relation>
+  </relatedObject>
+
+  <relatedObject local_id="s-staffwebsite">
+    <key/>
+    <relation type="isManagerOf" >
+      <description>Team only accessible project website</description>
+    </relation>
+  </relatedObject>
+
+  <relatedObject local_id="c-fasrepo">
+    <key/>
+    <relation type="isCollectorOf" >
+      <description>[[[FAS]]] data repository</description>
+    </relation>
+  </relatedObject>
+
+  <description type="brief">The group of people collaborating on the [[[FAS]]] project</description>
+   <description type="full">*** Not yet completed ***
+
+The intention here is to provide related object entries to the 
+institutional and/or people australia entries for each member
+of the project team listed here:
+
+http://www.foundersandsurvivors.org/team
+
+</description>
+  <relatedInfo type="website" >
+    <identifier type="uri">[[[URIPUB]]]team</identifier>
+    <title>List of team members from the project's public website</title>
+  </relatedInfo>
+</party>
+</rifcs_data>

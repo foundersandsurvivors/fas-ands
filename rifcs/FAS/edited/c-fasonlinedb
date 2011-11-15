@@ -1,0 +1,66 @@
+<rifcs_data id="c-fasonlinedb">
+<collection type="dataset" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">c-fasonlinedb</identifier>
+  <name type="primary">
+    <namePart>Founders and Survivors Online Database of Tasmanian Convicts (1818-1853)</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://foundersandsurvivors.org/pubsearch</value>
+      </electronic>
+    </address>
+  </location>
+
+      <relatedObject local_id="s-search-vdlcon">
+        <key/>
+        <relation type="supports">
+           <description>Search for a Tasmanian convict</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="s-staffwebsite">
+        <key/>
+        <relation type="supports">
+           <description>[[[FAS]]] staff website</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="p-team">
+        <key/>
+        <!-- For transcribed data, add further relation type="hasCollector" --> 
+        <relation type="isManagedBy">
+           <description>[[[FAS]]] team</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="a-project">
+        <key/>
+        <relation type="isOutputOf">
+           <description>[[[FAS]]] project</description>
+        </relation>
+      </relatedObject>
+  <TOBE_INCLUDED type="FAS:common_subjects_anzsrc-for" />
+  <subject type="local" xml:lang="en">FAS</subject>
+  <description type="brief">The [[[FAS]]] Online Database is a searchable population database of all convicts transported to Tasmania in the 19th century.</description>
+  <description type="full">The [[[FAS]]] Founders and Survivors Online Database brings together a number of research data sets created from various records relating to the 73,000 convicts transported to Tasmania in the 19th century and their descendents. The data was sourced from records of convicts held at the Tasmanian Archives and Heritage Office, various scholarly datasets, and data contributed from genealogists and members of the public with convict ancestors. 
+
+These records include conduct registers, which were kept by the colonial administration to record the behaviour of convicts while they underwent their sentence in the colony. The information recorded falls into two parts: that relating to the convict's history before arrival, and the details of his career in the colony. For each convict their name, ship, and police number and multiple conduct events are transcribed. Each conduct event consists of: a sequence number; date; description; sentence; and the magistrate's initials. Details of all conduct events were transcribed for one in 25 convicts.
+
+Also included in the database are partial transcriptions of the physical description lists, which provide height, eye color, hair color and distinguishing body markings. Muster entries for the years 1930, 1832, 1833 and 1835 are included. If the convict died whilst in the convict system it is likely the details of that death will be found in the database because a wide variety of sources were used to transcribe convict deaths.
+
+The Online Database is searchable by First Name, Surname or Police Number. The search system will query all the records in the database, and when a record is selected show a consolidated view of all the records for a person. This means the system will show all the different spelling of names and then attempt to links those records together to form a person's life history.
+
+For further details of how the search service works, see that related resource.
+</description>
+<coverage>
+  <temporal>
+    <dateFrom>1818</dateFrom>
+    <dateTo>1853</dateTo>
+  </temporal>
+  <spatial>
+    <text>[[[VDL]]]</text>
+  </spatial>
+</coverage>
+</collection>
+</rifcs_data>

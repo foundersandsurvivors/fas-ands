@@ -1,0 +1,54 @@
+<rifcs_data id="INIT">
+<collection type="catalogueOrIndex" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">c-GEN-shipIndex-idx</identifier>
+  <name type="primary">
+    <namePart>Index to Founders and Survivors Convict Ship Prosopograpies</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://dev.founders-and-survivors.org/pub/ands/collections/shipIndex/tei</value>
+      </electronic>
+    </address>
+  </location>
+  <TOBE_INCLUDED type="FAS:common_relatedObjects_collection" />
+###RELATEDOBJECTS###
+  <TOBE_INCLUDED type="FAS:common_subjects_anzsrc-for" />
+  <subject type="local" xml:lang="en">FAS</subject>
+  <description type="brief">This is brief description to assist discovery.</description>
+  <description type="full">
+<p>This collection is a catalog of all Convict Ship prosopography index collections which have been published by the Founders and Survivors research project. A separate collection is provided for each convict ship which disembarked convicts at these places in the Australian colonies:</p>
+<p> -- VDL: Van Diemen's Land; or</p>
+<p> -- NI: Norfolk Island; or</p>
+<p> -- PP: Port Phillip</p>
+<p/>
+<p>Each Convict Ship prosopography index provides a complete list of convict names and sufficient biographical data to enable unambiguous identification of the convict. This includes, where known, an estimation of the year of birth, place of birth, where and when convicted, the sentence, the date of arrival in the colony and the convict's age on arrival. The brief convict biographical data provided in these collections serves as an index into the far more extensive set of life course events which are recorded in the prosopgraphy database built by the research.</p>
+<p>These collections serve as the project's public browsable lists of convict names in each ship. The may be republished and extended from time to time to provide additional functionality e.g. inviting public contributions to correct incomplete or erroneous convict data linkage.</p>
+<p>Each convict name listed in these collections includes a hyperlink to the full set of aggregated set of matched and linked data deemed to be about this convict from a wide range of sources. These sources include various datasets inherited by the project, and source data selective transcriptions created by the Founders and Survivors research project. The published prosopography index for each ship includes:</p>
+<p> -- summary information for the convict ship (name, date/place of departure, arrival dates, name of master and surgeon, numbers embarked as reported by Bateson);</p>
+<p> -- description of the methodology used, and which sources were aggregated as the basis of the complete prosopgraphy;</p>
+<p> -- details of the record types which, matched together, comprise the names included in the ship;</p>
+<p> -- cross-references (hyperlinks) to relevant primary sources supplied by [[[TAHO]]].</p>
+<p> -- cross-references (hyperlinks) to further publically available life course data for each convict.</p>
+<p/>
+<p>Each ship's prosopography index is published in a directory, named by the ship's project id (999.99), with three different file formats provided:</p>
+<p> -- (default; suitable for web browsing) HTML: normal world wide web hypertext markup language format (index.htm); and</p>
+<p> -- (structured prosopgraphy: persons and events) XML / TEIp5 : Text Encoding Initiative (version p5) XML format (index.xml); and</p>
+<p> -- (row/column flat) simple flat files, tab delimited, suitable for Excel, Stata, SPSS or database usage (index.tab). See note (2) below.</p>
+<p/>
+<p>The complete list of ships for which a prosopgraphy index collection is published is as follows:</p>
+###GENINDEX###
+</description>
+  <description type="note">
+<p>Quality and extent of the prosopography and convict name matching for ships disembarking at Port Phillip and Norfolk Island is not as comprehensive as for those who were disembarked in [[[VDL]]].</p>
+  </description>
+  <description type="note">
+<p>More detailed and customised datasets are made available to members of the project team to support specific research agendas and research questions. If the specific data you require to support your research is not inluded in these basic collections, please make contact with the project and present your request for data and/or participation via the project's public website.</p>
+</description>
+  <relatedInfo>
+    <identifier type="uri">URI to a non-ANDS related information resource</identifier>
+    <title>Title of the related information</title>
+    <notes>Additional notes</notes>
+  </relatedInfo>
+</collection>
+</rifcs_data>

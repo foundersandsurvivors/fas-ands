@@ -1,0 +1,13 @@
+      <!-- start template FAS:common_relatedInfo -->
+      <!-- Added attrs of optional type, title, note as per
+               http://ands.org.au/resource/rifcsnov2010.html 
+           But its elements at the example at:
+               http://services.ands.org.au/documentation/rifcs/example/rif.xml
+           Should this be attrs or elements?
+      -->
+      <relatedInfo type="website" >
+        <identifier type="uri">http://search.archives.tas.gov.au/default.aspx?detail=1&amp;type=A&amp;id=TA00060</identifier>
+        <title>Tasmanian Archives and Heritage Office</title>
+        <notes>Custodian of original Convict Department primary sources series TA60.</notes>
+      </relatedInfo>
+      <!-- end   template FAS:common_relatedInfo -->

@@ -1,0 +1,19 @@
+<rifcs_data id="s-pubwebsite">
+<service type="assemble" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">s-pubwebsite</identifier>
+  <name type="primary">
+    <namePart>Website for Founders and Survivors project public collaboration</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://foundersandsurvivors.org/</value>
+      </electronic>
+    </address>
+  </location>
+  <TOBE_INCLUDED type="FAS:common_relatedObjects_service" />
+  <description type="brief">Public website of the Founders and Survivors project.</description>
+  <description type="full">A complete description. ####TODO####</description>
+  <accessPolicy>To participate in contributing information, receiving newsletters, or accessing discussions, members of the public need to register on the site.</accessPolicy>
+</service>
+</rifcs_data>

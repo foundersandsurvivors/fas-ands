@@ -1,0 +1,150 @@
+========== http://ands.org.au/guides/cpguide/cpgrelatedobject.html
+Encapsulated in local-relationships.xml
+
+========== Overview of rif-cs objects and relationships =======
+
+(#) indicates present in initial set of 5 entries
+
+Activity 'a-project' (#)
+   hasParticipant-> (party)'p-team'(group)
+                              **** add later links to inst repos/people australia ****
+                              hasMember->  individual parties/people (hamish, rebecca, janet, ss)
+                              <-isMemberOf
+Party 'p-team' (#)
+   isManagerOf -> (service)'s-pubwebsite'(#)
+                  (service)'s-staffwebsite'(#)
+   isCollectorOf->(collection)'c_fasrepo'(#)
+
+Service 's-pubwebsite'
+   hasPart 's-pub-collab'
+           's-pub-datacollect'
+           's-pub-search-vdlcon'
+              --> isPartOf 's-search-vdlcon'
+
+Service 's-pub-collab'
+   isSupportedBy (collection) 'c-newsletter'
+
+Service 's-pub-datacollect'
+   produces (collection)-> 'c-ccc' ->supports (service) 's-search-vdlcon'
+           <- isProducedBy
+
+Service 's-search-vdlcon'
+   hasPart 's-pub-search-vdlcon'
+           's-prot-search-vdlcon'
+   makesAvailable (collection) 'c_fasrepo' LATER: 'c-xmldb-pubweb'
+
+Service 's-staffwebsite'
+   hasPart 's-staffwiki'
+           's-prot-search-vdlcon'
+              --> isPartOf 's-search-vdlcon'
+           's-fasrepo' ------------------->produces(collection)'c_fasrepo' (umbrella service/collection)
+                hasPart 's-ingest'
+                        's-codify' <<<<------ textcat/gsom (Damminda)
+                        's-linkage'
+                        's-reporting'
+                        's-analytics' <<<<--- data warehouse (Damminda)
+           's-browse-xmldb'
+                isSupportedBy (collection) 'c_fasrepo'
+
+Service 's-linkage'
+   hasPart (service) 's-matching'
+                            isSupportedBy (collection) 's-fasrepo'
+   hasPart (service) 's-lkt'
+                            produces (collection)      'c-lkt'
+
+Collection 'c_fasrepo'/repository
+   isDescribedBy (collection) 'c-documentation'/collection 
+
+   hasPart 'c-data-inherited'/catalogueOrIndex
+                hasPart  'c-rectype-ai'/dataset
+                hasPart  'c-rectype-b4a'/dataset
+                hasPart  'c-kg_bdm'
+                             hasPart 'c-rectype-kgb'
+                             hasPart 'c-rectype-kgd'
+                             hasPart 'c-rectype-kgm'
+                hasPart  'c-oxley'
+                             hasPart 'c-rectype-of'
+                             hasPart 'c-rectype-om'
+                hasPart  'c-rectype-di'/dataset
+
+   hasPart 'c-data-transcriptions'/catalogueOrIndex
+                        'c-vdl-male-convicts'
+                             hasPart 'c-rectype-c23a'
+                             hasPart 'c-rectype-c31a'
+                             hasPart 'c-rectype-c33a'
+                             hasPart 'c-rectype-dcm'
+                             hasPart 'c-rectype-dlm'
+                        'c-vdl-female-convicts'
+                             hasPart 'c-rectype-c40a'
+                             hasPart 'c-rectype-dcf'
+                             hasPart 'c-rectype-dlf'
+                        'c-htgazette'
+                             hasPart 'c-rectype-hga'
+                             hasPart 'c-rectype-hgf'
+
+   hasPart 'c-data-crowdsourced'/catalogueOrIndex
+                        'c-rectype-ccc'/dataset
+
+   hasDerivedCollection 'c-lkt'
+           isDerivedFrom 'c-matching'/catalogueOrIndex
+                             hasPart ....all match runs datasets....
+           isDerivedFrom 'c-links'
+                            
+   hasDerivedCollection
+                        'c-xmldb'
+                           hasPart 'c-xmldb-pubweb'
+                           hasPart 'c-xmldb-AGG'
+                                    hasPart 'c-xmldb-AGG-female'
+                                    hasPart 'c-xmldb-AGG-male'
+                           hasPart 'c-xmldb-c23a.norm'
+                                   and so on for other normalised rectypes
+
+                        'c-populations'
+                            hasPart 'c-pop-1-male-ass-period'
+                            hasPart 'c-pop-2-female-ass-period'
+                            hasPart 'c-pop-3-male-prob-period'
+                            hasPart 'c-pop-4-female-prob-period'
+                            hasPart 'c-pop-5-male-localminor'
+
+                        'c-references'
+                            hasPart 'c-female-forenames'
+                                    'c-male-forenames'
+                                    'c-placenames'
+
+
+Collection 'c-xmldb-pubweb'
+   isAvailableThrough (service) 's-pub-search-vdlcon'
+                                's-prot-search-vdlcon'
+   isProducedBy (service)   's-prot-fasrepo'
+   isOperatedOnBy (service) 's-pub-datacollect'
+   
+                               
+
+
+For a collection:
+  isOutputOf A-fas_project
+
+For a activity:
+  isPartOf A-fas_project
+
+For a party:
+  isParticipantIn A-fas_project
+
+For a service:
+  isManagedBy A-fas_project
+
+-->
+      <relatedObject local_object_id="fas_contact">
+        <key>###TODO rifcs key of local_object_id activity "fas_project" FAS project primary contact ###</key>
+        <relation type="hasAssociationWith">
+          <description>Primary Contact</description>
+          <url>http://foundersandsurvivors.org/contact</url>
+        </relation>
+      </relatedObject>
+      <relatedObject local_id="fas_project">
+        <key>###TODO rifcs key of FAS project (activity) ###</key>
+        <relation type="isOutputOf">
+          <description>project</description>
+        </relation>
+      </relatedObject>
+      <!-- end   template FAS:common_relatedObjects -->

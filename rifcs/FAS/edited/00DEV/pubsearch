@@ -1,0 +1,26 @@
+<rifcs_data id="pubsearch">
+<collection type="service" dateAccessioned="2010-05-31T14:41:26Z" dateModified="2010-06-17T11:14:43Z">
+  <identifier type="local">pubsearch Version 1.0</identifier>
+  <name type="primary">
+    <namePart>Public service to search for a Tasmanian convict</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://foundersandsurvivors.org/pubsearch</value>
+      </electronic>
+    </address>
+  </location>
+  <TOBE_INCLUDED type="FAS:common_relatedObjects" />
+  <TOBE_INCLUDED type="FAS:common_subjects_anzsrc-for" />
+  <description type="note">
+<p>This is an online web service provided by the Founders and Survivors project. It is designed to assist members of the public locate their VDL convict anscestors.</p>
+<p>Access is open to the public.</p>
+<p>To use this search the web browser should support xsl 1.0 or higher stylesheets.</p>
+</description>
+   <description type="full">Public interface to public FAS XML database, designed to assist users find a Tasmanian convict.</description>
+  <relatedInfo>
+    <identifier type="uri">FAS:pubweb</identifier>
+  </relatedInfo>
+</collection>
+</rifcs_data>

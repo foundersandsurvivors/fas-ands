@@ -1,0 +1,57 @@
+<rifcs_data id="s-search-vdlcon">
+<service type="search-http" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">s-search-vdlcon</identifier>
+  <name type="primary">
+    <namePart>Search for a Tasmanian convict</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://foundersandsurvivors.org/pubsearch</value>
+      </electronic>
+      <electronic type="url">
+        <value>http://dev.founders-and-survivors.org/prot/staffsearch</value>
+      </electronic>
+    </address>
+  </location>
+
+      <relatedObject local_id="c-fasonlinedb">
+        <key/>
+        <relation type="isPartOf">
+           <description>[[[FAS]]] online database</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="s-pubwebsite">
+        <key/>
+        <relation type="isPartOf">
+           <description>[[[FAS]]] public website</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="s-staffwebsite">
+        <key/>
+        <relation type="isPartOf">
+           <description>[[[FAS]]] staff website</description>
+        </relation>
+      </relatedObject>
+
+  <TOBE_INCLUDED type="FAS:common_relatedObjects_service" />
+  <TOBE_INCLUDED type="FAS:common_subjects_anzsrc-for" />
+  <description type="brief">Online search service to locate a Tasmanian convict.</description>
+  <description type="full">This is an online web service provided by the Founders and Survivors project. It is designed to assist the public and project team members to locate VDL convicts which exist in the [[[FAS]]] online database. 
+
+The search operates in two stages. 
+
+  1. User enters a surname, given name and/or police number.
+
+     A list of matching convicts is given. Fuzzy searching is supported (names are converted to soundex codes for searching).
+
+  2. User selects a convict from the list provided.
+
+     A life course history of aggregated, time sequenced events for that coinvict is displayed.  This detailed display includes links to evidentiary images managed by [[[TAHO]]] which underpin the presented data.
+</description>
+  <description type="note">To use this search the web browser should support xsl 1.0 or higher stylesheets.</description>
+  <accessPolicy>The search service running on the staff server requires authentication. The search service running on the public server is open to the public.</accessPolicy>
+</service>
+</rifcs_data>

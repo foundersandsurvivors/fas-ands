@@ -1,0 +1,106 @@
+
+<data>
+<project>FAS</project>
+<collection_status>This is the initial set of 5 RIFCS FAS collections for DC3G end March 2011</collection_status>
+<desc>This is the FAS master list of resources. 
+  @n                      sequence
+  @ands_deployment="true" means the associated rif-cs object is deployed to ands
+  @public_access="true"   means the resource is public
+
+  Elements:
+    localid: W=website | S=service | C=collection , number NNN, [tr] means transcription
+    label  : local name in this system
+    uri    : unique id in this system
+    electronic_url @scope=(prod_public|prod|dev_public|dev|test)
+      If 'test', url is included in full
+      By default prod/dev is the staff server
+</desc>
+<interface>
+  <list type="websites" desc="FAS websites/VMhostss" userExtendable="no" >
+    <item label="Public website" value="prod_public" host="fasgold64">http://foundersandsurvivors.org</item>
+    <item label="Staff website" value="prod" host="ldap">http://founders-and-survivors.org</item>
+    <item label="DEV public website" value="dev_public" host="devfas">http://dev.foundersandsurvivors.org</item>
+    <item label="DEV staff website" value="dev" host="devfas">http://dev.founders-and-survivors.org</item>
+    <item label="Test arbitrary site" value="test" />
+  </list>
+  <list type="eventTypes" desc="FAS event types" userExtendable="no" >
+    <item label="Birth" value="birth" >
+       <xmldb>fasagg</xmldb>
+       <xquery>for $e in //convict let $b := </xquery>
+       <xquery>for $e in distinct-values(//event[@type='birth'])</xquery>
+    </item>
+  </list>
+</interface>
+<linkModels>
+  <resource n="" type="http" siteRefs="prod dev test">/the/uri/here.htm</resource>
+  <resource n="" type="xslt" siteRefs="dev">
+     <input>file:/srv/fasrepo/b4a/b4a-cleaned.xml</input>
+     <process>xslt:/srv/fasrepo/common-bin/xsl/flatten-xml.xsl</process>
+     <output>file:/srv/fasweb/webwork/tmp/b4a.tab</output>
+  </resource>
+</linkModels>
+<link n="1" public_access="true" ands_deployment="true">
+  <localid>W001</localid>
+  <label>public website</label>
+  <uri>pubweb</uri>
+  <electronic_url>http://foundersandsurvivors.org/</electronic_url>
+  <status>Available for public access</status>
+  <deliver>
+    <loc>
+        <workflow>http</workflow>
+        <method>GET</method>
+        <address siteRef="prod_public">/</address>
+    </loc>
+  </deliver>
+</link>
+<link n="2" ands_deployment="true">
+  <localid>W002</localid>
+  <label>staff wiki and website</label>
+  <uri>staffweb</uri>
+  <electronic_url>http://founders-and-survivors.org/prot/staffwiki</electronic_url>
+  <status>Available for project staff</status>
+</link>
+<link n="3" ands_deployment="true">
+  <key>unimelb/DC3G/0001</key>
+  <localid>C003tr</localid>
+  <label>crs 1 in 25</label>
+  <uri>crs1in25</uri>
+  <namePart>Tasmanian convicts conduct records 1 in 25 sample (female)</namePart>
+  <electronic_url>http://dev.founders-and-survivors.org/prot/fasrepo/reports/1in25/1in25_c40_report.xml</electronic_url>
+  <status>Available for project staff</status>
+</link>
+<link n="4" public_access="true"  ands_deployment="true">
+  <localid>S004</localid>
+  <label>Public find a VDL convict search web service</label>
+  <electronic_url>http://foundersandsurvivors.org/pubsearch</electronic_url>
+  <uri>pubsearch</uri>
+  <status>Available for public access</status>
+</link>
+<link n="5" ands_deployment="true">
+  <localid>S005</localid>
+  <label>Staff search web service</label>
+  <uri>staffsearch</uri>
+  <electronic_url>http://dev.founders-and-survivors.org/prot/staffsearch</electronic_url>
+  <status>Available for project staff</status>
+</link>
+<link n="6" ands_deployment="true">
+  <localid>C006tei</localid>
+  <label>Population 1 (male convicts to ~1840) TEI web browser</label>
+  <uri>M_to_1840_tei</uri>
+  <electronic_url>http://dev.founders-and-survivors.org/prot/teidocs/populations/faspop1/</electronic_url>
+  <status>Available for project staff. Needs some work on the (xslt/css) presentation.</status>
+</link>
+<link n="7">
+  <localid>C007ds</localid>
+  <label>Aggregated male convict dataset of core variables (flat)</label>
+  <uri>M_aggcore_ds</uri>
+  <status>Under development, not yet available.</status>
+</link>
+<link n="8">
+  <localid>C008ds</localid>
+  <label>Male convict event dataset (flat, brief)</label>
+  <uri>M_events_ds</uri>
+  <status>Under development, not yet available.</status>
+</link>
+</data>
+

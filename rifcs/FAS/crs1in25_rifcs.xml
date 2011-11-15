@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd">
+  <registryObject group="DC3G">
+    <key>m4__key_con</key>
+    <originatingSource type="authoritative">m4__originatingSource</originatingSource>
+    <collection type="dataset" dateAccessioned="2010-05-31T14:41:26Z" dateModified="2010-06-17T11:14:43Z">
+      <identifier type="local">unimelb/fas/dataset/crs_index-1in25sample/1.0</identifier>
+      <name type="primary">
+        <namePart>Tasmanian convicts conduct records 1 in 25 sample (female)</namePart>
+      </name>
+      <location>
+        <address>
+          <electronic type="url">
+            <value>http://dev.founders-and-survivors.org/prot/fasrepo/reports/1in25/1in25_c40_report.xml</value>
+          </electronic>
+        </address>
+      </location>
+      <relatedObject>
+        <key>###TODO rifcs key of project primary contact ###</key>
+        <relation type="hasAssociationWith">
+          <description>Primary Contact</description>
+        </relation>
+      </relatedObject>
+      <relatedObject>
+        <key>###TODO rifcs key of FAS project (activity) ###</key>
+        <relation type="isOutputOf">
+          <description>project</description>
+        </relation>
+      </relatedObject>
+      <subject type="anzsrc-for" xml:lang="en">430101</subject>
+      <subject type="anzsrc-for" xml:lang="en">321202</subject>
+      <subject type="anzsrc-for" xml:lang="en">370504</subject>
+      <subject type="local" xml:lang="en">crs</subject>
+      <subject type="local" xml:lang="en">female convicts</subject>
+      <subject type="local" xml:lang="en">conduct records</subject>
+      <subject type="local" xml:lang="en">CON40</subject>
+      <subject type="local" xml:lang="en">transcription</subject>
+      <description type="note">This is an xml dataset (no schema). 
+
+Access is restricted to the project team.
+
+To view this dataset in a web browser the browser should support xsl 1.0 or higher stylesheets. 
+
+To take a copy of this resource, use your web browser "save as" function to save as xml.
+ 
+</description>
+      <description type="full">An index of convict names which appear in the Founders and Survivors project record type "crs" (conduct record sample). The "crs" record type is a complete transcription of the conduct events in every 25th Tasmanian Convict conduct records. This dataset is an index to the female convicts in "crs".</description>
+	<relatedInfo>
+		<identifier type="uri">http://dev.founders-and-survivors.org/prot/fasrepo/current/crs/</identifier>
+	</relatedInfo>
+	<relatedInfo>
+		<identifier type="uri">http://dev.founders-and-survivors.org/prot/fasrepo/current/c40a/</identifier>
+	</relatedInfo>
+    </collection>
+  </registryObject>
+</registryObjects>

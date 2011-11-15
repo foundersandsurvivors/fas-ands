@@ -1,0 +1,8 @@
+INSTCODE	UNIMELB
+INSTNAME	University of Melbourne
+VDL	Van Diemen's Land
+FAS	Founders and Survivors
+TAHO	Tasmanian Archive And Heritage Office
+TAHOCONURI	http://search.archives.tas.gov.au/default.aspx?detail=1&amp;type=S&amp;id=
+URIPUB	http://foundersandsurvivors.org/
+URITEAM	http://founders-and-survivors.org/

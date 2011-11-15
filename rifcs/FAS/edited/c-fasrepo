@@ -1,0 +1,123 @@
+<rifcs_data id="c-fasrepo">
+<collection type="repository" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">c-fasrepo</identifier>
+  <name type="primary">
+    <namePart>Founders and Survivors managed data repository</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://founders-and-survivors.org/prot/fasrepo/</value>
+      </electronic>
+    </address>
+  </location>
+
+      <relatedObject local_id="s-search-vdlcon">
+        <key/>
+        <relation type="supports">
+           <description>Search for a Tasmanian convict</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="s-staffwebsite">
+        <key/>
+        <relation type="supports">
+           <description>[[[FAS]]] staff website</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="p-team">
+        <key/>
+        <!-- For transcribed data, add further relation type="hasCollector" --> 
+        <relation type="isManagedBy">
+           <description>[[[FAS]]] team</description>
+        </relation>
+      </relatedObject>
+
+      <relatedObject local_id="a-project">
+        <key/>
+        <relation type="isOutputOf">
+           <description>[[[FAS]]] project</description>
+        </relation>
+      </relatedObject>
+  <TOBE_INCLUDED type="FAS:common_subjects_anzsrc-for" />
+  <subject type="local" xml:lang="en">FAS</subject>
+  <description type="brief">[[[FAS]]] managed data repository</description>
+  <description type="full">This repository encapsulates the entire set of [[[FAS]]] managed data collections.
+
+Temporal and spatial coverage specified here applies to all contents unless otherwise indicated on the related collection.
+
+A rough outline of the collections it encompases is given below (draft design).
+RIF-CS entries will be created for each of these throughout 2011.
+
+Collection 'c_fasrepo'/repository
+   isDescribedBy (collection) 'c-documentation'/collection
+
+   hasPart 'c-data-inherited'/catalogueOrIndex
+                hasPart  'c-rectype-ai'/dataset
+                hasPart  'c-rectype-b4a'/dataset
+                hasPart  'c-kg_bdm'
+                             hasPart 'c-rectype-kgb'
+                             hasPart 'c-rectype-kgd'
+                             hasPart 'c-rectype-kgm'
+                hasPart  'c-oxley'
+                             hasPart 'c-rectype-of'
+                             hasPart 'c-rectype-om'
+                hasPart  'c-rectype-di'/dataset
+
+   hasPart 'c-data-transcriptions'/catalogueOrIndex
+                        'c-vdl-male-convicts'
+                             hasPart 'c-rectype-c23a'
+                             hasPart 'c-rectype-c31a'
+                             hasPart 'c-rectype-c33a'
+                             hasPart 'c-rectype-dcm'
+                             hasPart 'c-rectype-dlm'
+                        'c-vdl-female-convicts'
+                             hasPart 'c-rectype-c40a'
+                             hasPart 'c-rectype-dcf'
+                             hasPart 'c-rectype-dlf'
+                        'c-htgazette'
+                             hasPart 'c-rectype-hga'
+                             hasPart 'c-rectype-hgf'
+
+   hasPart 'c-data-crowdsourced'/catalogueOrIndex
+                        'c-rectype-ccc'/dataset
+
+   hasDerivedCollection 'c-lkt'
+           isDerivedFrom 'c-matching'/catalogueOrIndex
+                             hasPart ....all match runs datasets....
+           isDerivedFrom 'c-links'
+
+   hasDerivedCollection
+                        'c-xmldb'
+                           hasPart 'c-xmldb-pubweb'
+                           hasPart 'c-xmldb-AGG'
+                                    hasPart 'c-xmldb-AGG-female'
+                                    hasPart 'c-xmldb-AGG-male'
+                           hasPart 'c-xmldb-c23a.norm'
+                                   and so on for other normalised rectypes
+
+                        'c-populations'
+                            hasPart 'c-pop-1-male-ass-period'
+                            hasPart 'c-pop-2-female-ass-period'
+                            hasPart 'c-pop-3-male-prob-period'
+                            hasPart 'c-pop-4-female-prob-period'
+                            hasPart 'c-pop-5-male-localminor'
+
+                        'c-references'
+                            hasPart 'c-female-forenames'
+                                    'c-male-forenames'
+                                    'c-placenames'
+ 
+</description>
+<coverage>
+  <temporal>
+    <dateFrom>1818</dateFrom>
+    <dateTo>1853</dateTo>
+  </temporal>
+  <spatial>
+    <text>[[[VDL]]]</text>
+  </spatial>
+</coverage>
+</collection>
+</rifcs_data>

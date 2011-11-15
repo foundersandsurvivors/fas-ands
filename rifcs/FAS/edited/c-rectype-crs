@@ -1,0 +1,91 @@
+<rifcs_data id="c-rectype-crs" project="FAS">
+<collection type="dataset" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">c-rectype-crs</identifier>
+  <name type="primary">
+    <namePart>Tasmanian convict conduct records 1 in 25 sample</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://founders-and-survivors.org/prot/fasrepo/current/crs/</value>
+      </electronic>
+    </address>
+  </location>
+<relatedObject local_id="c-idx-crs">
+<key/>
+<relation type="hasDerivedCollection">
+<description>Index to Tasmanian convicts conduct records 1 in 25 sample</description>
+</relation>
+</relatedObject>
+<relatedObject local_id="p-team">
+<key/>
+<relation type="hasCollector">
+<description>Transcription by the Founders and Survivors team</description>
+</relation>
+</relatedObject>
+  <TOBE_INCLUDED type="FAS:common_relatedObjects" />
+  <TOBE_INCLUDED type="FAS:common_subjects_anzsrc-for" />
+  <subject type="local" xml:lang="en">crs</subject>
+  <subject type="local" xml:lang="en">conduct records</subject>
+  <subject type="local" xml:lang="en">transcription</subject>
+  <subject type="local" xml:lang="en">CON31</subject>
+  <subject type="local" xml:lang="en">CON33</subject>
+  <subject type="local" xml:lang="en">CON40</subject>
+  <subject type="local" xml:lang="en">CON41</subject>
+  <subject type="local" xml:lang="en">CON37</subject>
+  <TOBE_INCLUDED type="FAS:common_accessRightsSTAFF" />
+  <description type="brief">Transcription of a 1 in 25 sample of complete conduct events from Tasmanian convict Conduct records</description>
+  <description type="full">This dataset is a [[[FAS]]] source record type: "crs" (Conduct Record Sample).
+
+The "crs" record type is a complete transcription of the conduct events from every 25th Tasmanian Convict conduct record. The conduct record series primary sources are maintained by [[[TAHO]]]. 
+
+This transcription includes a sample taken from the series: CON31, CON33, CON40, CON41 and CON37. Complete details of these primary sources maintained by [[[TAHO]]] (the custodian of the primary sources), please refer to related information.
+
+For each convict their name, ship, and police number and multiple conduct events are transcribed.  Each conduct event consists of:
+ * a sequence number
+ * date
+ * description
+ * sentence
+ * magistrate (initials)
+</description>
+  <description type="prot.staff">The "crs" record type has been processed through the standard FAS ingest workflow which converts Excel to XML.
+
+The ingest documentation and codebook are available here:
+
+ * http://founders-and-survivors.org/prot/fasrepo/current/crs/
+
+The XML database "raw_crs" contains the XML form of the data and is described here:
+
+ * http://founders-and-survivors.org/prot/fasrepo/current/documentation/xml-database-descriptions/raw_crs.xml
+</description>
+  <description type="note" />
+
+  <TOBE_INCLUDED type="FAS:common_relatedInfo" />
+  <TOBE_GENERATED type="fas_rectype_relatedInfo" />
+  <relatedInfo type="website" >
+    <identifier type="uri">[[[TAHOCONURI]]]CON31</identifier>
+    <title>Con31 primary source</title>
+    <notes>CON31 conduct records male to 1840 primary source at TAHO.</notes>
+  </relatedInfo>
+  <relatedInfo type="website" > 
+    <identifier type="uri">[[[TAHOCONURI]]]CON33</identifier>
+    <title>Con33 primary source</title>
+    <notes>CON33 conduct records male after 1840 primary source at TAHO.</notes>
+  </relatedInfo>
+  <relatedInfo type="website" >
+    <identifier type="uri">[[[TAHOCONURI]]]CON40</identifier>
+    <title>Con40 primary source</title>
+    <notes>CON40 conduct records female to 1840 primary source at TAHO.</notes>
+  </relatedInfo>
+  <relatedInfo type="website" >
+    <identifier type="uri">[[[TAHOCONURI]]]CON41</identifier>
+    <title>Con41 primary source</title>
+    <notes>CON41 conduct records female after 1840 primary source at TAHO.</notes>
+  </relatedInfo>
+  <relatedInfo type="website" > 
+    <identifier type="uri">[[[TAHOCONURI]]]CON37</identifier>
+    <title>Con37 primary source</title>
+    <notes>CON37 conduct records male minor ships and local convictions after 1840 primary source at TAHO.</notes>
+  </relatedInfo>
+</collection>
+</rifcs_data>

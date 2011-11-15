@@ -1,0 +1,29 @@
+<rifcs_data id="a-project" project="FAS" type="activity">
+<activity type="project" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">a-project</identifier>
+  <name type="primary">
+    <namePart>Founders and Survivors project</namePart>
+  </name>
+  <TOBE_INCLUDED type="FAS:common_relatedObjects_activity" />
+  <relatedObject local_id="c-fasrepo">
+    <key/>
+    <relation type="hasOutput">
+      <description>[[[FAS]]] managed data repository</description>
+    </relation>
+  </relatedObject>
+  <TOBE_INCLUDED type="FAS:common_subjects_anzsrc-for" />
+  <description type="brief">[[[FAS]]]</description>
+   <description type="full"><p>Founders and Survivors is a partnership between historians, genealogists, demographers and population health researchers. The project has brought together a number of research data sets created from records relating to the 73,000 convicts transported to Tasmania in the 19th century and their descendents to create an online, searchable population database of national and international significance for historical, demographic and population health researchers.</p>
+
+<p>The records created of our convict founders are the most detailed descriptions of the bodies and lives of men, women and children created anywhere in the world in the 19th century. No other settler society has such a record of their founders' heights, eye colour, literacy, skills, family history, problems and temperament. We know so much about them when they were in the convict system, but we know very little about most of them once they were free.</p>
+
+<p>The history of Australia will be reconstructed from the grass-roots up, starting with the most disadvantaged of Australia's colonial settlers: the men, women and children transported as convicts to Van Diemen's Land. Families will be followed looking at life span, health, families, occupations and where they settled. They will then be connected with those who served in the AIF in World War 1 and compare the service records of the male descendants of male convicts to investigate changes in height, childhood diet and health, and resilience under stress.</p>
+</description>
+  <TOBE_INCLUDED type="FAS:common_relatedInfo_activity" />
+  <relatedInfo type="website" >
+    <identifier type="uri">http://web.esrc.unimelb.edu.au/SC02/biogs/E000986b.htm</identifier>
+    <title>Institutional registry entry for the project</title>
+    <notes>The main description for this object was taken from this related info. The Institutional entry requires a userid/password. The Institutional entry and this object need to be harmonised/made one.</notes>
+  </relatedInfo>
+</activity>
+</rifcs_data>

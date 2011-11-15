@@ -1,0 +1,37 @@
+<rifcs_data id="s-staffwebsite">
+<service type="assemble" dateAccessioned="" dateModified="[[[TODAY]]]">
+  <identifier type="local">s-staffwebsite</identifier>
+  <name type="primary">
+    <namePart>Website for Founders and Survivors project team (restricted access)</namePart>
+  </name>
+  <location>
+    <address>
+      <electronic type="url">
+        <value>http://founders-and-survivors.org/prot/staffwiki</value>
+      </electronic>
+    </address>
+  </location>
+
+     <relatedObject local_id="c-fasonlinedb">
+        <key/>
+        <relation type="isSupportedBy">
+           <description>[[[FAS]]] online database</description>
+        </relation>
+      </relatedObject>
+
+     <relatedObject local_id="c-fasrepo">
+        <key/>
+        <relation type="isSupportedBy">
+           <description>[[[FAS]]] managed data repository</description>
+        </relation>
+      </relatedObject>
+
+  <TOBE_INCLUDED type="FAS:common_relatedObjects_service" />
+  <description type="brief">Project website for team members requiring authenticated access</description>
+  <description type="full">
+<p>Project team member website of the Founders and Survivors project. It provides a staff wiki, access to staff search services, and a browsable repository of project team input datasets, analytical reports, and processed datasets.</p>
+<p>A userid and login is required to access this site.</p>
+</description>
+<accessPolicy>Only for members of the research team (users must authenticate and be members of the staff group).</accessPolicy>
+</service>
+</rifcs_data>
