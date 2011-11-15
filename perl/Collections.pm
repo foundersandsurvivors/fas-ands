@@ -1,12 +1,14 @@
 package Collections;
-################################################################################# Collections
-# Cloned from Fasutil to handle rifcs and project collection documentation
+
+###############################################################################
+# Founders and Survivors Collections module
+# to handle rifcs and project collection documentation.
 # 
 # Backend controller/processor for /pub/ands/xforms xsltforms
 #
-# V00.1  2011-03-30 sms initial version
-# Copied from /srv/fasweb/perl by claudine on 2011-11-10.
-########################################################################################
+# Version 0.21b by Sandra Silcot and Claudine Chionh.
+###############################################################################
+
 use strict;
 
 use Apache2::RequestRec ();
@@ -22,10 +24,11 @@ use Text::Soundex;
 use Text::JaroWinkler qw( strcmp95 );
 use Text::LevenshteinXS qw(distance);
 
+# FIXME Where is this module?
 # for lkt access
 use fasLinkClient;
 
-# for basex access over socket
+# For BaseX access over socket.
 # Download an up-to-date version of the BaseX perl client from 
 # https://github.com/BaseXdb/basex-api/blob/master/src/main/perl/BaseXClient.pm
 use BaseX;
@@ -38,12 +41,11 @@ use vars qw[$now $userwas $VER $UDIR $INST $WEBWORKDIR %OBJECTS $TREEDATA $objNa
             $MALEDEATHTARGETS $FEMALEDEATHTARGETS $SHIPSDOC $SHIPSDOC_XC ];
 my $VER = "0.21b";
 my $userwas = '';
-my $INST = "UNIMELB";
+my $INST = "UNIMELB";   # Instance? Installation? FIXME
 my $now = localtime();
 my $UDIR = "/srv/fasweb/webwork"; # dir for saving parms and user parm sets
 my $WEBWORKDIR = "/srv/fasweb/webwork/rifcs"; # dir for saving rifcs and models for each collection
 my $XSLT_DEFAULT = 'fasQuery-dev.xsl';
-my $FEEDBACK = 'http://founders-and-survivors/prot/staffwiki/';
 my $BASEX_PATH = '/media/disk2/basex';
 my $XSL_PATH = '/pub/xsl';
 
@@ -1263,3 +1265,30 @@ __unknownTYPE__
 
 1;
 
+__END__
+
+=head1 NAME
+
+Collections.pm
+
+=head1 SYNOPSIS
+
+TODO
+
+=head1 DESCRIPTION
+
+Founders and Survivors Collections module to handle rifcs and project collection documentation.
+
+=head1 DEPENDENCIES
+
+FIXME F<fasLinkClient> is available from ...
+
+FIXME F<BaseX> is available from ...
+
+All other modules are available from CPAN.
+
+=head1 AUTHORS
+
+Sandra Silcot, Founders and Survivors project.
+
+Contact: L<http://foundersandsurvivors.org/contact>.
