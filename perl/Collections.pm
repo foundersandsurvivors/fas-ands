@@ -26,6 +26,8 @@ use Text::LevenshteinXS qw(distance);
 use fasLinkClient;
 
 # for basex access over socket
+# Download an up-to-date version of the BaseX perl client from 
+# https://github.com/BaseXdb/basex-api/blob/master/src/main/perl/BaseXClient.pm
 use BaseX;
 use Time::HiRes;
 
