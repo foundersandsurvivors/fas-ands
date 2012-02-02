@@ -1,0 +1,14 @@
+##========================== ../../excel2xml.pl NRECS[99999] recs of dcf in test_dcf_excelfile.xls singles[]
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+Wide character in print at /usr/local/share/perl/5.10.0/XML/Excel.pm line 160.
+# cleaning test_dcf_excelfile.xml -> test_dcf_excelfile.xml2
+-rwxrwxr-x 1 ssilcot ssilcot 466944 2012-01-30 19:34 test_dcf_excelfile.xls
+-rw-rw-r-- 1 ssilcot ssilcot 705190 2012-01-30 19:43 test_dcf_excelfile.xml
+../../excel2xml.pl: normal eoj

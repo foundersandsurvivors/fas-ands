@@ -1,16 +1,38 @@
 #!/usr/bin/perl -s
-# TODO document this script for ANDS.
-# Copied from /srv/fasrepo/common-bin by claudine on 2011-11-10.
 
+$|=1;
 use utf8;
+use XML::LibXML;
+use XML::LibXML::XPathContext;
+
 $myVersion = '2.1';
-# ers = enlistment records sample
-# dcf,dcm are a later, Comprehensive record of convict deaths 'def,dem' inc. recs for those who had completed sentence
 use vars qw[%C];
 chop(my $date = `date`);
-#########$TYPES = 'hga,c31a,c33a,c40a,dem,def,c31s,c33s,c37s,c40s,c41s,dlm,dlf,dcf,dcm,c23a';
-$TYPES = 'NEW,b4a,ai,of,om,c31a,c33a,c40a,dem,def,c31s,c33s,c37s,c40s,c41s,crs,dlm,dlf,dcf,dcm,dbu,c23a,hga,di,kgd,kgb,kgm,mm,mf,hgf,rpg,ff,ers,ert,wff';
-$TYPE = $ARGV[0];
+
+# Configuration data is loaded from this file in the current dir, or is created.
+$myConfigFile = 'excel2xml_config.xml';
+($CONFIGDOC,$TYPES) = &configure_types; # Added for ANDS-funded version.
+$USAGEINFO = "$0 usage:\n\n    $0 recordType inputFilename nrecs\n\nWhere\n * \"type\" is a RECORD_TYPE ID attribute as defined in $myConfigFile = [$TYPES]\n\n * \"inputFilename\" is the name of the Excel binary file\n\n * \"nrecs\" is the number of excel rows contained in the file to be processed\n\n";
+
+$TYPE = $ARGV[0]; # the record type needs to be passed on the command line
+unless ($TYPE) {
+  die "#ERROR# recordType not specified\n\n$USAGEINFO";
+}
+# we have a rectype, get its column configuration
+@COLSINTYPE = &columns($TYPE);
+
+if ($docoltest) {
+    print "#==== $0 -docoltest for TYPE[$TYPE] start...\n";
+    if ($TYPE eq 'NEW') {
+       print "\nNEW record type does not require element names to be configured.\n"; 
+    }
+    else {
+       print "\nXML element names for RECORD_TYPE[$TYPE] will be:\n"; 
+    }
+    foreach ( @coltest ) { print "$_,"; } print "\n";
+    print "\n# eoj. -docoltest done.\n";
+    exit 0;
+}
 if ($dodesc) {
   # just tell us the column mappings
   print "# $0 : column order for [$TYPE]\n";
@@ -55,7 +77,7 @@ elsif ( $TYPE eq 'NEW' && -f $ARGV[1] ) {
   print "##========================== $0 $TYPE $ARGV[1]\n";
 }
 else {
-  die "$0 usage: $0 type infile nrecs (where type is one of [$TYPES])\n";
+  die $USAGEINFO;
 }
 
 use XML::Excel;         # for old format .xls  files
@@ -64,6 +86,7 @@ use Spreadsheet::XLSX;  # for new format .xlsx format
 my $file = $ARGV[1];
 my $xmlfile = $file;
 $xmlfile =~ s/\.xls$/.xml/;
+$xmlfile .= ".xml" unless ( $xmlfile =~ m/\.xml$/ );
 
 # if empty, write a stub
 if ( $file =~ m|MISSINGFILE| || $file =~ m|_n\.xls| ) {
@@ -501,8 +524,8 @@ sub remove_columns {
   system("mv ${f}2 $f");
 }
 
-#--------------------------------------- columns
-sub columns {
+#--------------------------------------- columns (old hard coded for fas)
+sub fas_columns {
   my $doctype = shift;
   if ( $doctype eq 'wff' ) {
     # wff: uni of woolongong first fleet dataset - no IDS !!!!! faaarrrk!
@@ -856,3 +879,103 @@ sub loadFDextraInfo {
   }
   close(F);
 }
+
+sub configure_types {
+
+    my $types = '';
+    
+    # read $myConfigFile in the current directory, or create it
+
+    if ( -f $myConfigFile ) {
+       my $doc;
+       eval { $doc = XML::LibXML->new->parse_file($myConfigFile); }; 
+       if ( $@ ) {
+          warn $@;
+          die "$0 The configuration file [$myConfigFile] is not well formed XML. Please edit and correct the file and try again.\n";
+       }
+       
+       # get the record types into a simple string 
+ 
+       my $xc = XML::LibXML::XPathContext->new($doc);
+       my $i = 0;
+       foreach my $n ( $xc->findnodes("//RECORD_TYPE") ) {
+          $i++;
+          my $id = $n->getAttribute( 'ID' );
+          unless ($id) {
+              print STDERR "#warning# No ID found in RECORD_TYPE sequence $i\n";
+          }
+          if ($types) { $types .= ",$id"; } else { $types = $id; }
+       }
+       if ($types) {
+           return ($doc,$types);
+       }
+       else {
+           die "$0 #ERR# No <RECORD_TYPE..found $myConfigFile doc[$doc] parse it... nyi types[$types]\n";
+       }
+    }
+    else {
+
+       # generate a config file for the user
+
+       open (C,">$myConfigFile") || die "$0 #ERR# failed to open file[$myConfigFile] for write [$!]. Permissions?\nPlease rectify and try again.";
+
+       # uncomment this to generate fas config, formerly hard coded
+
+       my $genfas = "b4a,ai,of,om,c31a,c33a,c40a,dem,def,c31s,c33s,c37s,c40s,c41s,crs,dlm,dlf,dcf,dcm,dbu,c23a,hga,di,kgd,kgb,kgm,mm,mf,hgf,rpg,ff,ers,ert,wff";
+       print C "<CONFIG>\n";
+       print C "  <INFO><p>This file defines record type ids and provides the xml element names to be used for each Excel column.</p>\n";
+       print C "</INFO>\n";
+       print C "  <RECORD_TYPE ID=\"NEW\" />\n";
+       if ( $genfas ) {
+           foreach my $rt ( split(/ *, */,$genfas)  ) {
+               print C "<RECORD_TYPE ID=\"$rt\">\n";
+               my @columns = &fas_columns($rt);
+               foreach my $c ( @columns ) {
+                   print C "  <C>$c</C>\n";
+               }
+               print C "</RECORD_TYPE>\n";
+           }
+       }
+       else {
+           print C "  <C>TODO_FIELDS_NOT_YET_IMPLEMENTED</C>\n";
+       }
+       print C "</CONFIG>\n";
+       close(C);
+
+       # Validate what has been written
+       my $doc;
+       eval { $doc = XML::LibXML->new->parse_file($myConfigFile); }; 
+       if ( $@ ) {
+          warn $@;
+          die "$0 #ERR# This program wrote invalid XML! Cosmic Ray Shower?\n";
+       }
+       print "\nSuccessful creation of configuration file.\n";
+       print "\nPlease edit the record type ID and required column names in the file named:\n    $myConfigFile\nbefore proceeding.\n";
+       print "# eoj\n";
+       exit 0;
+    }
+}
+
+#--------------------------------------- columns (data driven spec)
+# Read the xml config file and return an array of xml element names for the type
+sub columns {
+  my $rectype = shift;
+  my @COLS; 
+  my $xc = XML::LibXML::XPathContext->new($CONFIGDOC);
+  my $i = 0;
+  #my $n = $xc->findnodes("//RECORD_TYPE[@ID='$rectype']//C");
+  foreach my $n ( $xc->findnodes('//RECORD_TYPE[@ID="'.$rectype.'"]//C') ) {
+     $i++;
+     my $colname = $n->findvalue(".");
+     print ".. $i = [$colname]\n" if $docoltest;
+     push ( @COLS, $colname );
+  }
+  if ( $i == 0 ) {
+      print ".. ##warning## NO columns defined for rectype[$rectype]\n" unless ($rectype eq 'NEW');
+  }
+  else {
+      print ".. Total of $i columns in rectype[$rectype]\n" if $docoltest;
+  }
+  return @COLS;
+}
+
